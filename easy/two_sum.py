@@ -23,7 +23,7 @@ class Solution:
         #Optimal Solution O(n)
         d = {}
         for i, x in enumerate(nums):
-            z = target - x
+            z = target - x #target - x gives us the value we need to find, if this value is in our dict, we simple return i, and the index stored in d[z]
             if z in d:
                 return (d[z], i)
             else:

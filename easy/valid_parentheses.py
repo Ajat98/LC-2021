@@ -12,7 +12,7 @@ class Solution:
             if c in d.values(): #the opening brackets, if found append to stack
                 stack.append(c)
             elif c in d.keys(): #Closing brackets, if found and stack is empty --> error, else if the opening bracket is not popped then out of sequence
-                if stack == [] or d[c] != stack.pop():
+                if stack == [] or d[c] != stack.pop(): #We should never find a closing bracket before we have already found it's opening bracket (d[c] != stack.pop)
                     return False
             else:
                 return False
